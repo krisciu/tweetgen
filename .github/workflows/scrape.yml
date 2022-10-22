@@ -35,7 +35,7 @@ jobs:
           
       - name: perform scrape
         run: |
-          snscrape --jsonl --progress --max-results 100 twitter-search "from:jack" > user-tweets.json
+          snscrape --jsonl --progress --max-results 100 twitter-search "from:ViralTweetz" > user-tweets.json
           cat user-tweets.json
           pwd
 
