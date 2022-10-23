@@ -35,7 +35,7 @@ jobs:
           
       - name: perform scrape
         run: |
-          snscrape --jsonl --progress --max-results 10000 twitter-search "from:SCHIZO_FREQ" > user-tweets.json
-          cat user-tweets.json
+          ./src/scrape.py
+          ls
           pwd
 
