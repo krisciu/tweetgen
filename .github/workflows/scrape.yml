@@ -32,7 +32,7 @@ jobs:
           
       - name: perform scrape
         run: |
-          ./src/scrape.py
+          python /src/scrape.py
           ls
           pwd
 
