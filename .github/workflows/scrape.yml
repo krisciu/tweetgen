@@ -1,7 +1,6 @@
 
 name: tweetscraper
 
-# Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
@@ -9,14 +8,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "scrape"
   scrape:
-    # The type of runner that the job will run on
+    # runs on ubuntu cause  macos costs money and windows is for scrubs
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -24,17 +21,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # Signals run
       - name: scrape-init
         run: echo 'init scrape'
 
-      # Runs a set of commands using the runners shell
+      # Installs dependencies
       - name: Install dependencies
         run: |
           pip install snscrape
           
       - name: perform scrape
         run: |
+          ./src/scrape.py
           ls
           pwd
 
