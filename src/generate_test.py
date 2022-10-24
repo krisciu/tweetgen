@@ -17,6 +17,5 @@ client = tweepy.Client(bearer_token,consumer_key,consumer_secret,access_token,ac
 f = open("testtext.txt", "r")
 print(f.read())
 
-response = client.create_tweet(text=str(f.read()))
-
-print('response = ' + response)
+response = client.create_tweet(text="ok")
+print(response)
