@@ -62,6 +62,7 @@ gpt2.generate_to_file(sess,
 
 
 f = open("gentext.txt", "r")
+print(f.read())
 
 response = client.create_tweet(text=f.read())
 
