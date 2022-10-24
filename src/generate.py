@@ -45,5 +45,5 @@ gpt2.generate_to_file(sess,
                       truncate='<|endoftext|>',
                       include_prefix=False,
                       nsamples=1,
-                      batch_size=20
+                      batch_size=1
                       )
