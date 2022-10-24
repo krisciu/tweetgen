@@ -10,4 +10,4 @@ for tweet in sntwitter.TwitterSearchScraper('from:SCHIZO_FREQ').get_items():
 # Creating a dataframe from the tweets list above 
 tweets_df1 = pd.DataFrame(tweets_list, columns=['Text'])
 
-tweets_df1.to_csv(index=False)
+tweets_df1.to_csv('train_data.csv',index=False)
