@@ -16,7 +16,7 @@ except:
 
 # Authenticate to Twitter
 
-client = tweepy.Client(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET'), os.getenv('ACCESS_TOKEN'), os.getenv('ACCESS_TOKEN_SECRET'))
+client = tweepy.Client(os.getenv("BEARER_TOKEN"))
 
 gpt2.download_gpt2(model_name="124M")
 
