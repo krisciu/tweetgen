@@ -1,5 +1,7 @@
 import gpt_2_simple as gpt2
 import tensorflow as tf
+import tweepy
+import os
 
 
 try:
@@ -47,3 +49,21 @@ gpt2.generate_to_file(sess,
                       nsamples=1,
                       batch_size=1
                       )
+
+
+# Authenticate to Twitter
+auth = tweepy.OAuthHandler(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET')
+auth.set_access_token(os.getenv('ACCESS_TOKEN'), os.getenv('ACCESS_TOKEN_SECRET'))
+
+api = tweepy.API(auth)
+
+try:
+    api.verify_credentials()
+    print("Authentication OK")
+except:
+    print("Error during authentication")
+
+f = open("gentext.txt", "r")
+
+api.update_status(f.read())
+

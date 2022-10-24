@@ -28,9 +28,14 @@ jobs:
       # Installs dependencies
       - name: Install dependencies
         run: |
-          pip install snscrape pandas tensorflow-cpu gpt-2-simple
+          pip install snscrape pandas tensorflow-cpu gpt-2-simple tweepy
           
       - name: perform scrape
+        env:
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         run: |
           cd src
           python scrape.py
