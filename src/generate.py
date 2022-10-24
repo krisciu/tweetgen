@@ -1,5 +1,17 @@
 import gpt_2_simple as gpt2
 
+
+
+try:
+    # Disable all GPUS
+    tf.config.set_visible_devices([], 'GPU')
+    visible_devices = tf.config.get_visible_devices()
+    for device in visible_devices:
+        assert device.device_type != 'GPU'
+except:
+    # Invalid device or cannot modify virtual devices once initialized.
+    pass
+
 gpt2.download_gpt2(model_name="355M")
 
 file_name = "train_data.csv"
