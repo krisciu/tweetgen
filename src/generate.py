@@ -20,7 +20,7 @@ sess = gpt2.start_tf_sess()
 
 gpt2.finetune(sess,
               dataset=file_name,
-              model_name='355M',
+              model_name='124M',
               steps=50,
               restore_from='fresh',
               run_name='run1',
