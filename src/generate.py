@@ -1,6 +1,6 @@
 import gpt_2_simple as gpt2
 import tensorflow as tf
-import tweepy
+import tweepy as tweepy
 import os
 
 
@@ -16,7 +16,7 @@ except:
 
 # Authenticate to Twitter
 
-client = tweepy.client(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET'), os.getenv('ACCESS_TOKEN'), os.getenv('ACCESS_TOKEN_SECRET'))
+client = tweepy.Client(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET'), os.getenv('ACCESS_TOKEN'), os.getenv('ACCESS_TOKEN_SECRET'))
 
 gpt2.download_gpt2(model_name="124M")
 
