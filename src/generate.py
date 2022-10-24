@@ -12,7 +12,7 @@ except:
     # Invalid device or cannot modify virtual devices once initialized.
     pass
 
-gpt2.download_gpt2(model_name="355M")
+gpt2.download_gpt2(model_name="124M")
 
 file_name = "train_data.csv"
 
