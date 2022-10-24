@@ -28,12 +28,14 @@ jobs:
       # Installs dependencies
       - name: Install dependencies
         run: |
-          pip install snscrape pandas tensorflow==1.15 gpt-2-simple
+          pip install snscrape pandas tensorflow gpt-2-simple
           
       - name: perform scrape
         run: |
           cd src
           python scrape.py
+          python generate.py
+          cat gentext.txt
           ls -la
           pwd
     
