@@ -32,6 +32,7 @@ jobs:
           
       - name: perform scrape
         run: |
+          sudo apt-get install libcudart
           cd src
           python scrape.py
           python generate.py
