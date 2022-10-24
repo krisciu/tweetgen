@@ -28,7 +28,7 @@ jobs:
       # Installs dependencies
       - name: Install dependencies
         run: |
-          pip install snscrape
+          pip install snscrape pandas
           
       - name: perform scrape
         run: |
