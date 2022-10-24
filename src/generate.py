@@ -14,7 +14,10 @@ gpt2.finetune(sess,
               run_name='run1',
               print_every=10,
               sample_every=500,
-              save_every=500
+              save_every=500,
+              use_memory_saving_gradients = True,
+	          only_train_transformer_layers = True,
+	          accumulate_gradients = 1
               )
 
 sess = gpt2.start_tf_sess()
