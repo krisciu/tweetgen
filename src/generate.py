@@ -14,6 +14,12 @@ except:
     # Invalid device or cannot modify virtual devices once initialized.
     pass
 
+# Authenticate to Twitter
+
+auth = tweepy.OAuth1UserHandler(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET'), os.getenv('ACCESS_TOKEN'), osgetenv('ACCESS_TOKEN_SECRET'))
+api = tweepy.API(auth)
+
+
 gpt2.download_gpt2(model_name="124M")
 
 file_name = "train_data.csv"
@@ -51,19 +57,9 @@ gpt2.generate_to_file(sess,
                       )
 
 
-# Authenticate to Twitter
-auth = tweepy.OAuthHandler(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET')
-auth.set_access_token(os.getenv('ACCESS_TOKEN'), os.getenv('ACCESS_TOKEN_SECRET'))
-
-api = tweepy.API(auth)
-
-try:
-    api.verify_credentials()
-    print("Authentication OK")
-except:
-    print("Error during authentication")
-
 f = open("gentext.txt", "r")
 
 api.update_status(f.read())
+
+
 
