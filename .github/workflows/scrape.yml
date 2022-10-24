@@ -34,5 +34,7 @@ jobs:
         run: |
           cd src
           python scrape.py
+          ls -la
+          pwd
     
 
