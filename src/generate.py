@@ -50,7 +50,7 @@ gen_file = 'gentext.txt'
 
 gpt2.generate_to_file(sess,
                       destination_path=gen_file,
-                      length=200,
+                      length=180,
                       temperature=1.0,
                       top_p=0.9,
                       prefix='<|startoftext|>',
