@@ -65,4 +65,3 @@ f = open("gentext.txt", "r")
 
 response = client.create_tweet(text=f.read())
 
-print('response = ' + response)
