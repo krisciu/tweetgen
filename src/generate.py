@@ -16,9 +16,7 @@ except:
 
 # Authenticate to Twitter
 
-auth = tweepy.OAuth1UserHandler(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET'), os.getenv('ACCESS_TOKEN'), os.getenv('ACCESS_TOKEN_SECRET'))
-api = tweepy.API(auth)
-
+client = tweepy.client(os.getenv('CONSUMER_KEY'), os.getenv('CONSUMER_SECRET'), os.getenv('ACCESS_TOKEN'), os.getenv('ACCESS_TOKEN_SECRET'))
 
 gpt2.download_gpt2(model_name="124M")
 
@@ -59,7 +57,6 @@ gpt2.generate_to_file(sess,
 
 f = open("gentext.txt", "r")
 
-api.update_status(f.read())
+response = client.create_tweet(text=f.read())
 
-
-
+print('response = ' + response)
