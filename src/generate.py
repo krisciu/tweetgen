@@ -21,7 +21,7 @@ sess = gpt2.start_tf_sess()
 gpt2.finetune(sess,
               dataset=file_name,
               model_name='355M',
-              steps=500,
+              steps=50,
               restore_from='fresh',
               run_name='run1',
               print_every=10,
@@ -31,8 +31,7 @@ gpt2.finetune(sess,
 	          accumulate_gradients = 1
               )
 
-sess = gpt2.start_tf_sess()
-gpt2.load_gpt2(sess, run_name='run1')
+
 
 
 gen_file = 'gentext.txt'
